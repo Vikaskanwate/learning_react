@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {
+    height: 100%;
+    width: 100%;
+    background-color: #00000055;
+}
+
+#root {
+    height: 100vh;
+}
+nav {
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.nav-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .nav-left h2 {
+    padding-left: 5vh;
+}
+.form-div {
+    height: calc(100vh - 11vh);
+}
+
+footer {
+    height: 5vh;
+    display: flex;
+    align-items: center;
+}
