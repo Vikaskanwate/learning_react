@@ -8,7 +8,9 @@ import AuthProvider, { AuthContext } from "./context/AuthProvider";
 
 function App() {
   const [user, setUser] = useState(null);
-  const data = useContext(AuthContext);
+  const authData = useContext(AuthContext);
+  
+  
 
   const handleLogin = (email, password) => {
     if (email == "admin@me.com" && password == "123") {
@@ -22,7 +24,6 @@ function App() {
     }
   };
 
-  console.log(data);
 
   return (
     <>
