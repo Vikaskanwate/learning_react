@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import Home from './components/Home.jsx'
 import About from './components/About.jsx'
+import contactUs from "./components/contactUs.jsx"
 import { Route, RouterProvider,createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import Layout from './Layout.jsx'
 
@@ -18,7 +19,11 @@ const router = createBrowserRouter([
       {
         path:"about",
         element:<About/>
-      }
+      },
+      {
+        path:"contact",
+        element:<contactUs/>
+      },
     ]
   }
 ])
