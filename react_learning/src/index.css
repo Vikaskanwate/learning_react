@@ -12,12 +12,7 @@ html,body{
   height: 100%;
   width: 100%;
 }
-body{
-  background-color: aquamarine;
-}
-h1{
-  background-color: aqua;
-}
+
 
 button{
   padding: 1.2vh 2vh;
