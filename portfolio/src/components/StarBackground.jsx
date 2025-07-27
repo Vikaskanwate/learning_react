@@ -7,6 +7,12 @@ const StarBackground = () => {
     useEffect(() => {
         generateStars();
         generateMeteor();
+
+        const handleResize = () =>{
+            generateStars();
+        }
+        window.addEventListener("resize",handleResize);
+        return () => window.removeEventListener("resize",handleResize);
     }, []);
 
     const generateStars = () => {
@@ -58,9 +64,9 @@ const StarBackground = () => {
             {meteors.map((meteor) => {
                 return (<div key={meteor.id} className='meteor animate-meteor' style={
                     {
-                        width: meteor.size  * 50 + "px",
-                        height: meteor.size + "px",
-                        left: meteor.x + "%", 
+                        width: meteor.size * 40 + "px",
+                        height: meteor.size  + "px",
+                        left: meteor.x  + "%", 
                         top: meteor.y + "%",
                         animationDelay: meteor.delay,
                         animationDuration: meteor.animationDuration + "s",
