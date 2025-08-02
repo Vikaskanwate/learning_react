@@ -1,35 +1,35 @@
 
 const projects = [
     {
-        id:1,
-        title:"Sundown studio",
-        description:"A beautifully website using html css and js.",
-        image:"./project1.png",
-        tags:["HTML","CSS","JS"],
-        demoUrl:"#",
-        githubUrl:"#"
+        id: 1,
+        title: "Sundown studio",
+        description: "A beautifully website using html css and js.",
+        image: "./project1.png",
+        tags: ["HTML", "CSS", "JS"],
+        demoUrl: "#",
+        githubUrl: "#"
     },
     {
-        id:1,
-        title:"Sundown studio",
-        description:"A beautifully website using html css and js.",
-        image:"./project1.png",
-        tags:["HTML","CSS","JS"],
-        demoUrl:"#",
-        githubUrl:"#"
+        id: 1,
+        title: "Sundown studio",
+        description: "A beautifully website using html css and js.",
+        image: "./project1.png",
+        tags: ["HTML", "CSS", "JS"],
+        demoUrl: "#",
+        githubUrl: "#"
     },
     {
-        id:1,
-        title:"Sundown studio",
-        description:"A beautifully website using html css and js.",
-        image:"./project1.png",
-        tags:["HTML","CSS","JS"],
-        demoUrl:"#",
-        githubUrl:"#"
+        id: 1,
+        title: "Sundown studio",
+        description: "A beautifully website using html css and js.",
+        image: "./project1.png",
+        tags: ["HTML", "CSS", "JS"],
+        demoUrl: "#",
+        githubUrl: "#"
     },
 ]
 
-export const ProjectSection = ()=>{
+export const ProjectSection = () => {
     return (
         <section id="projects" className="py-20 px-4 relative">
             <div className="container mx-auto max-w-5xl">
@@ -41,10 +41,18 @@ export const ProjectSection = ()=>{
                     and user experience.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((project,key)=>(
+                    {projects.map((project, key) => (
                         <div key={key} className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover">
                             <div className="h-48 overflow-hidden">
-                                <img className="h-full  transition-transform duration-500 group-hover:scale-110" src={project.image} alt={project.title}/>
+                                <img className="h-full  transition-transform duration-500 group-hover:scale-110" src={project.image} alt={project.title} />
+                            </div>
+
+                            <div className="p-6">
+                                <div className="flex flex-wrap gap-2 mb-4">
+                                    {project.tags.map((tag) => (
+                                        <span className="px-2 py-1 text-xs font-medium border text-primary/50 rounded-full bg-secondary text-secondary-foreground">{tag}</span>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     ))}
