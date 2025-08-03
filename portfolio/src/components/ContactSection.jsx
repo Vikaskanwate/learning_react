@@ -99,7 +99,7 @@ export const ContactSection = () =>{
                             >
                                 Send Message
                                 <Send size={16}/>
-                            </button>
+                            </button> 
                         </form>
                     </div>
                 </div>
