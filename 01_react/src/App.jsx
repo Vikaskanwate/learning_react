@@ -3,28 +3,32 @@ import './App.css'
 
 function App() {
 
-  let [count,setCount] = useState(0);
+  let [count, setCount] = useState(0);
 
-  const addvalue = () =>{
-  
-
-      count = count  + 1;
-      setCount(count);
+  const addvalue = () => {
+    count = count + 1;
+    setCount(count);
 
   }
-  const removeValue = ()=>{
-    count= count - 1;
-    setCount(count)
+  const removeValue = () => {
+    if (count > 0) {
+      count = count - 1;
+      setCount(count)
+    }
   }
 
   return (
     <section>
-      <h1>counter app</h1>
-      <h2>counter values: {count}</h2>
-      <div className='btndiv'>
-        <button onClick={addvalue}>Add value </button>
-        <br />
-        <button onClick={removeValue}>Remove value</button>
+      <div className='counter'>
+        <h1>counter app</h1>
+        <div className='container'>
+          <h2 className='top'>counter values: {count}</h2>
+          <div className='bottom-row'>
+            <button className='left' onClick={addvalue}>Add value </button>
+            <br />
+            <button className='right' onClick={removeValue}>Remove value</button>
+          </div>
+        </div>
       </div>
     </section>
   )
