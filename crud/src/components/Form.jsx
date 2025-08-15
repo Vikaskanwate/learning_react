@@ -46,7 +46,10 @@ export const Form = ({data,setData,updateDataApi,setUpdateDataApi}) =>{
                     curElem.id === res.id ? res.data : curElem
                 ))
             })
+            setAddData({title:" ",body:" "});
+            setUpdateDataApi({}); 
         } catch (error) {
+            console.log(error);
             
         }
     };

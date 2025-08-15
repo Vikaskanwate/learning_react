@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { deletePost, getPost } from "../api/PostApi";
 import { Form } from "./Form";
+import '../App.css';
 export const Posts = () => {
 
   const [data,setData] = useState([]);
