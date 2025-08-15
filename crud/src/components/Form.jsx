@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { PostData } from "../api/PostApi"
+import { PostData, updateData } from "../api/PostApi"
 export const Form = ({data,setData,updateDataApi,setUpdateDataApi}) =>{
     const [addData,setAddData] = useState({
         title : "",
@@ -36,10 +36,33 @@ export const Form = ({data,setData,updateDataApi,setUpdateDataApi}) =>{
         } 
     }
 
+    const updatePostData = async () => {
+        try {
+            const res = await updateData(updateDataApi.id,addData);
+            console.log(res);
+
+            setData((prev)=>{
+                return prev.map((curElem)=>(
+                    curElem.id === res.id ? res.data : curElem
+                ))
+            })
+        } catch (error) {
+            
+        }
+    };
+
     const handleFormSubmit = (e) =>{
         e.preventDefault();
         addPostData();
+        const action = e.nativeEvent.submitter.value;
+        if(action === "Add"){
+            addPostData();
+        }else if(action === "Edit"){
+            updatePostData();
+        }
     }
+
+    let isEmpty = Object.keys(updateDataApi).length === 0;
     return (
 
         <div style={{height:"70px",display:"flex",alignItems:"center",justifyContent:"center"} }>
@@ -65,7 +88,7 @@ export const Form = ({data,setData,updateDataApi,setUpdateDataApi}) =>{
                 value={addData.body}
                 onChange={handleInputChange}/>
             </div>
-            <button type="submit">Add</button>
+            <button type="submit" value={isEmpty ? "Add" : "Edit"}>{isEmpty ? "Add" : "Edit"}</button>
         </form>
         </div>
     )

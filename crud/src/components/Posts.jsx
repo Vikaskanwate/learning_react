@@ -29,7 +29,7 @@ export const Posts = () => {
     
   }
 
-  const handleUpdatePosts = (curElem) => setUpdateDataApi();
+  const handleUpdatePosts = (curElem) => setUpdateDataApi(curElem);
 
   useEffect(() => {
     getPostData();
@@ -47,7 +47,7 @@ export const Posts = () => {
             return <li key={id}>
               <p>{title}</p>
               <p>{body}</p>
-              <button>Edit</button>
+              <button onClick={()=>handleUpdatePosts(curElem)}>Edit</button>
               <button onClick={()=>handleDelete(id)}>delete</button>
             </li>
           })
