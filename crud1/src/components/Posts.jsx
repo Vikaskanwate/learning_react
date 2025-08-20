@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getPost } from '../api/PostApi';
+import { deletePost, getPost } from '../api/PostApi';
 
 const Posts = () => {
   const [data,setData] = useState([]);
@@ -12,6 +12,21 @@ const Posts = () => {
   useEffect(()=>{
     getPostsData();
   },[]);
+
+  const handleDelete = async (id)=>{
+    try{
+      const res = await deletePost(id);
+      if(res.status === 200){
+        const newPost = data.filter((curPost)=>{
+          return curPost.id !== id;
+        })
+        setData(newPost);
+      }
+    }catch(err){
+      console.log(err);
+    }
+  }
+  
   return (
     <div>
       <section className='section-post'>
@@ -22,7 +37,7 @@ const Posts = () => {
               return <li key={id}>
                 <p>{title}</p>
                 <p>{body}</p>
-                <button>Add</button>
+                <button onClick={()=>handleDelete(id)}>Delete</button>
                 <button>Edit</button>
               </li>
             })
