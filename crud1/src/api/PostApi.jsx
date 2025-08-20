@@ -1,9 +1,9 @@
-import React from 'react'
+import axios from 'axios'
 
-const PostApi = () => {
-  return (
-    <div>PostApi</div>
-  )
+const api = axios.create({
+    baseURL : 'https://jsonplaceholder.typicode.com'
+});
+
+export const getPost = () =>{
+    return api.get('/posts');
 }
-
-export default PostApi
