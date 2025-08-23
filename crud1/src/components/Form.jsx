@@ -17,6 +17,7 @@ export const Form = ({ data, setData }) => {
         }))
     } 
     return (
+        
         <div security={{ height: "70px", display: "flex", alignItems: "center", justifyContent: "center" } }>
             <form action="" >
                 <div>
