@@ -31,7 +31,7 @@ const Posts = () => {
   return (
     <div>
       <section>
-        <Form data={data} setData={setData}/>
+        <Form data={data} setData={setData} />
       </section>
       <section className='section-post'>
         <ul>

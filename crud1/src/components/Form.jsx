@@ -11,24 +11,33 @@ export const Form = ({ data, setData }) => {
         const name = e.target.name;
         const value = e.target.value;
         setData((prev =>{
+            console.log(prev,"hi");
+            
             return {
                 ...prev,
-                [name]:value,
+                [name]: value,
             }
         }))
     } 
 
     const addPostData = async ()=>{
         const res = await PostData(addData);
+        console.log(res);
         if(res.status === 201){
             setData([...data,res.data]);
-            setAddData({title:"",body:""});
+            setAddData({title:" ",body:" "});
         }
+    }
+
+    const handleFormSubmit = (e) =>{
+        e.preventDefault();
+        addPostData();
+        console.log("submitted");
     }
     return (
         
         <div security={{ height: "70px", display: "flex", alignItems: "center", justifyContent: "center" } }>
-            <form action="" >
+            <form onSubmit={handleFormSubmit}>
                 <div>
                     <label htmlFor="title"></label>
                     <input type="text" 
