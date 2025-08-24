@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { PostData } from "../api/PostApi";
 
 export const Form = ({ data, setData }) => {
     const [addData, setAddData] = useState({
@@ -16,6 +17,14 @@ export const Form = ({ data, setData }) => {
             }
         }))
     } 
+
+    const addPostData = async ()=>{
+        const res = await PostData(addData);
+        if(res.status === 201){
+            setData([...data,res.data]);
+            setAddData({title:"",body:""});
+        }
+    }
     return (
         
         <div security={{ height: "70px", display: "flex", alignItems: "center", justifyContent: "center" } }>
