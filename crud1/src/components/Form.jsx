@@ -10,6 +10,7 @@ export const Form = ({ data, setData }) => {
     const handleInputChange = (e) =>{
         const name = e.target.name;
         const value = e.target.value;
+        // const {name,value} = e.target; 
         setData((prev =>{
             console.log(prev,"hi");
             
@@ -25,7 +26,7 @@ export const Form = ({ data, setData }) => {
         console.log(res);
         if(res.status === 201){
             setData([...data,res.data]);
-            setAddData({title:" ",body:" "});
+            setAddData({title:"",body:""});
         }
     }
 
@@ -36,7 +37,7 @@ export const Form = ({ data, setData }) => {
     }
     return (
         
-        <div security={{ height: "70px", display: "flex", alignItems: "center", justifyContent: "center" } }>
+        <div style={{ height: "70px", display: "flex", alignItems: "center", justifyContent: "center" } }>
             <form onSubmit={handleFormSubmit}>
                 <div>
                     <label htmlFor="title"></label>
