@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Form = ({data,setData}) => {
+const Form = () => {
   return (
     <div>Form</div>
   )

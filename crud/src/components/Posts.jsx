@@ -26,8 +26,7 @@ export const Posts = () => {
       }
     }catch(error){
       console.log(error);
-    }
-    
+    } 
   }
 
   const handleUpdatePosts = (curElem) => setUpdateDataApi(curElem);
