@@ -3,11 +3,12 @@ import { deletePost, getPost } from "../api/PostApi";
 import Form from './Form';
 export const Posts = ()=>{
     const [data,setData] = useState([]);
-    
+    const [updateDataApi,setUpdateDataApi] = useState({});
     const getPostData = async () =>{
         const res = await getPost();
         setData(res.data);
     }
+
     
     useEffect(()=>{
         getPostData();
@@ -28,10 +29,13 @@ export const Posts = ()=>{
             console.log(error);
         }
     }
+    
+    const handleUpdatePost = (curElem) => setUpdateDataApi(curElem);
+
     return (
         <>
             <section>
-                <Form data={data} setData={setData}></Form>
+                <Form data={data} setData={setData} updateDataApi={updateDataApi} setUpdateDataApi={setUpdateDataApi}></Form>
             </section>
             <section className="section-post">
                 <ul>
@@ -41,7 +45,7 @@ export const Posts = ()=>{
                             return <li key={id}>
                                 <p>{title}</p>
                                 <p>{body}</p>
-                                <button>Edit</button>
+                                <button onClick={()=>handleUpdatePost(curElem)}>Edit</button>
                                 <button onClick={()=>handleDelete(id)}>delete</button>
                             </li>
                         })
