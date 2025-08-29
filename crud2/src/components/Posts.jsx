@@ -13,7 +13,13 @@ export const Posts = ()=>{
         getPostData();
     },[]);
 
-    
+    const handleDelete = async () =>{
+        try{
+            
+        }catch(error){
+            
+        }
+    }
     return (
         <>
             <section>
