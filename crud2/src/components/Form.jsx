@@ -24,7 +24,7 @@ const Form = ({ data, setData, updateDataApi, setUpdataDataApi }) => {
     console.log(res);
     if (res.status === 201) {
       setData([...data, res.data])
-      setAddData({ title: "", body: "" });
+      setAddData({ title:"", body: "" });
     }
   }
 
