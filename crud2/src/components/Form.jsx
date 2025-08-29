@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import {postData} from '../api/PostApi'
 const Form = ({data,setData}) => {
  
   const [addData,setAddData] = useState({
@@ -7,6 +7,31 @@ const Form = ({data,setData}) => {
     body :""
   })
 
+  const handleInputChange = (e) =>{
+    const name = e.target.name;
+    const value = e.target.value;
+
+    setAddData((prev =>{
+      return {
+        ...prev,
+        [name]:value,
+      }
+    }))
+  }
+
+  const addPostData = async ()=>{
+    const res = await postData(addData);
+    console.log(res);
+    if(res.status === 201){
+      setData([...data,res.data])
+      setAddData({title:"",body:""});
+    }
+  }
+
+  const handleFormSubmit = (e) =>{
+    e.preventDefault();
+    addPostData();
+  }
   return (
     <div style={{height:"70px",display:"flex",alignItems:"center",justifyContent:"center"}}>
     <form onSubmit={handleFormSubmit}>
@@ -26,7 +51,7 @@ const Form = ({data,setData}) => {
           autoComplete='off'
           name="body" 
           id="body"
-          placeholder='Add body' 
+          placeholder='Add post' 
           value={addData.body}
           onChange={handleInputChange}/>
         </div>
