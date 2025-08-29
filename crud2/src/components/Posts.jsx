@@ -1,12 +1,23 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { getPost } from "../api/PostApi";
 
 export const Posts = ()=>{
     const [data,setData] = useState([]);
     
+    const getPostData = async () =>{
+        const res = await getPost();
+        setData(res.data);
+    }
+    
+    useEffect(()=>{
+        getPostData();
+    },[]);
+
+    
     return (
         <>
             <section>
-                {/* <Form data={data}></Form> */}
+                <Form data={data} setData={setData}></Form>
             </section>
             <section className="section-post">
                 <ul>
@@ -17,7 +28,7 @@ export const Posts = ()=>{
                                 <p>{title}</p>
                                 <p>{body}</p>
                                 <button>Edit</button>
-                                <button>delete</button>
+                                <button onClick={()=>handleDelete(id)}>delete</button>
                             </li>
                         })
                     }
