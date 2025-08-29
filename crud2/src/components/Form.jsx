@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { postData, updateData } from '../api/PostApi'
 const Form = ({ data, setData, updateDataApi, setUpdataDataApi }) => {
 
