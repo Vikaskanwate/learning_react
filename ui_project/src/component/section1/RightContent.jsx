@@ -8,7 +8,7 @@ const RightContent = () => {
       <RightCard/>
       <RightCard/>
       <RightCard/>
-
+      <RightCard/>
     </div>
   )
 }
