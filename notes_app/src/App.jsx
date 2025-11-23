@@ -9,7 +9,7 @@ const App = () => {
          value="" 
          placeholder='Enter heading notes'/>
         <textarea 
-        placeholder='Enter Details' 
+        placeholder='Enter details' 
         name="" 
         
         id=""> </textarea>
