@@ -7,7 +7,7 @@ const App = () => {
         <input
          type="text" 
          value="" 
-         placeholder='Enter heading notes'/>
+         placeholder='Enter heading'/>
         <textarea 
         placeholder='Enter details' 
         name="" 
