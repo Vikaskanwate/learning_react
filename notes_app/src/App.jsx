@@ -11,7 +11,6 @@ const App = () => {
         <textarea 
         placeholder='Enter details' 
         name="" 
-        
         id=""> </textarea>
       </form>
     </div>
