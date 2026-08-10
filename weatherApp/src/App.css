@@ -1,0 +1,131 @@
+:root {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+  }
+  
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .app-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.5s ease;
+  }
+  
+  /* Dynamic themes switching based on city temperatures */
+  .theme-default { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
+  .theme-warm { background: linear-gradient(135deg, #b45309 0%, #78350f 100%); }
+  .theme-cold { background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%); }
+  
+  .card-wrapper {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 32px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+  
+  .app-title {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+  
+  .search-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  
+  .search-form input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 16px;
+    border-radius: 12px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+  }
+  
+  .search-form button {
+    background: white;
+    border: none;
+    padding: 0 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .weather-card {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  .location-name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  
+  .icon-wrapper {
+    margin: 16px 0;
+  }
+  
+  .main-temp {
+    font-size: 56px;
+    font-weight: 800;
+  }
+  
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 16px;
+    border-radius: 16px;
+  }
+  
+  .detail-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .label {
+    display: block;
+    font-size: 12px;
+    color: #94a3b8;
+  }
+  
+  .value {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .status-msg {
+    text-align: center;
+    padding: 12px;
+    color: #94a3b8;
+  }
+  
+  .error-msg {
+    color: #f87171;
+  }
+  
